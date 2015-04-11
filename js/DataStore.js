@@ -1,4 +1,4 @@
-Zenefits.addClass('DataStore', function(){
+Zenefits.add('DataStore', function(){
     var store = {};
     return {
         'getItem': function(key) {

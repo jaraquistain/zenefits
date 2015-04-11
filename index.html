@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="zenefits">
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" src="">
+    <!--<link rel="stylesheet" src="">-->
+    <script type="text/javascript" src="js/lib/angular.min.js"></script>
 </head>
 <body>
-    <nav>
-
-    </nav>
-    <script src="js/Zenefits.js"></script>
-    <script src="js/DataStore.js"></script>
-    <script src="js/Api.js"></script>
+    <p data-ng-controller="NotesController">nothing here {{foo + '!'}}</p>
+    <script type="text/javascript" src="js/Zenefits.js"></script>
+    <script type="text/javascript" src="js/controllers/NotesController.js"></script>
+    <script type="text/javascript" src="js/App.js"></script>
+    <!--<script src="js/DataStore.js"></script>-->
+    <!--<script src="js/Api.js"></script>-->
 </body>
 </html>
