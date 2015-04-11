@@ -5,13 +5,24 @@
     <title></title>
     <!--<link rel="stylesheet" src="">-->
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
 </head>
 <body>
     <p data-ng-controller="NotesController">nothing here {{foo + '!'}}</p>
+
+    <!--NAMESPACE-->
     <script type="text/javascript" src="js/Zenefits.js"></script>
+
+    <!--CLASSES-->
+    <script src="js/classes/DataStore.js"></script>
+    <script src="js/classes/Api.js"></script>
+
+    <!--ANGULAR CONTROLLERS-->
     <script type="text/javascript" src="js/controllers/NotesController.js"></script>
-    <script type="text/javascript" src="js/App.js"></script>
-    <!--<script src="js/DataStore.js"></script>-->
-    <!--<script src="js/Api.js"></script>-->
+    <script type="text/javascript" src="js/controllers/NoteController.js"></script>
+    <script type="text/javascript" src="js/controllers/EditController.js"></script>
+
+    <!--ANGULAR APP-->
+    <script type="text/javascript" src="js/Module.js"></script>
 </body>
 </html>

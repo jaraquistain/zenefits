@@ -14,14 +14,14 @@ function Zenefits(){
      * @returns {Zenefits}
      */
     this.add = function(type, name, entity){
-        if (!type || !name || !constructor) {
+        if (!type || !name || !entity) {
             console.warn('cannot add entity to namespace. Invalid arguments');
-            return;
+            return this;
         }
         this[type] = this[type] || {};
-        this[type][name] = constructor;
+        this[type][name] = entity;
         return this;
     };
 }
 
-window.Zenefits = new Zenefits();
+window.Zenefits = new Zenefits;

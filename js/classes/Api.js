@@ -1,4 +1,4 @@
-Zenefits.add('Api', function(){
+Zenefits.add('Class', 'Api', function(){
     var db = window.localStorage || new Zenefits.classes.DataStore,
         _api = this;
 
@@ -23,4 +23,4 @@ Zenefits.add('Api', function(){
     return _api;
 });
 
-Zenefits.api = new Zenefits.classes.Api;
+Zenefits.api = new Zenefits.Class.Api;
