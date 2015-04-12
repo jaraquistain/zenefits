@@ -1,6 +1,6 @@
 ## This is a coding exercise for Zenefits. 
 
-I have created a mobile web app that allows you to create, view and edit/remove short text notes. There is no fancy formatting support for the notes, but white space is preserved.
+<p>I have created a mobile web app that allows you to create, view and edit/remove short text notes. There is no fancy formatting support for the notes, but white space is preserved.</p>
 
 #### Things to note: 
 1. I know that Zenefits uses EmberJS but I'm most familiar with AngularJS and figured it would be a better measure of my ability.
@@ -11,25 +11,25 @@ I have created a mobile web app that allows you to create, view and edit/remove 
 
 ### ARCHITECTURE
 #### App:
-/js/Zenefits.js
-The namespace. A simple namespace that can add things into itself. Doesn't handle things like inheritance/polymorphism or dependency management like a normal namespace would.
+*/js/Zenefits.js*
+<p>The namespace. A simple namespace that can add things into itself. Doesn't handle things like inheritance/polymorphism or dependency management like a normal namespace would.</p>
 
-/js/Module.js
-The AngularJS module. Contains route definitions and controller bindings.
+*/js/Module.js*
+<p>The AngularJS module. Contains route definitions and controller bindings.</p>
 
 #### Models:
-/js/models/Note.js
-A model service for creating and dealing with Note model objects within the app. 
+*/js/models/Note.js*
+<p>A model service for creating and dealing with Note model objects within the app.</p>
 
 #### Classes:
-/js/classes/Api.js
-Meant to serve as a stand-in for the back-end. Provides typical request methods (get, post, etc.) and manages the upkeep of the "database" decribed below.
+*/js/classes/Api.js*
+<p>Meant to serve as a stand-in for the back-end. Provides typical request methods (get, post, etc.) and manages the upkeep of the "database" decribed below.</p>
 
-/js/classes/DataStore.js
-This class is essentially a polyfill for LocalStorage. In all practical cases it will never be used it was simple enough so I figured why not.
+*/js/classes/DataStore.js*
+<p>This class is essentially a polyfill for LocalStorage. In all practical cases it will never be used it was simple enough so I figured why not.</p>
 
 #### Views: 
-'#/'               (NotesController)  - View all notes created
-'#/create'         (CreateController) - create a new note
-'#/note/{id}'      (NoteController)   - view a specific note
-'#/note/{id}/edit' (EditController)   - Edit or delete an existing note
+- \#/ (NotesController): *View all notes created*
+- \#/create (CreateController): *create a new note*
+- \#/note/{id} (NoteController): *view a specific note*
+- \#/note/{id}/edit (EditController): *Edit or delete an existing note*
