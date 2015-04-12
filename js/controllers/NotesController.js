@@ -1,11 +1,28 @@
 Zenefits.add('Controller','NotesController', function NotesController(){
     this.controller = function($scope){
-        Zenefits.Model.Note.getNote({
-            'success': function(notes) {
-                $scope.notes = notes;
-            }
-        });
+        /////////////////
+        //PRIVATE METHODS
+        /////////////////
+        /**
+         * Init the controller
+         * @private
+         */
+        var _init = function() {
+            Zenefits.Model.Note.getNote({
+                'success': function(notes) {
+                    $scope.notes = notes;
+                }
+            });
+        };
 
+        /////////////////
+        //PUBLIC METHODS
+        /////////////////
+        /**
+         * Delete a note
+         * @param id
+         * @param index
+         */
         $scope.remove = function(id, index) {
             var confirm = window.confirm("Are you sure you want to delete this note?");
             confirm && Zenefits.Model.Note.removeNote({
@@ -15,6 +32,11 @@ Zenefits.add('Controller','NotesController', function NotesController(){
                 }
             })
         };
+
+        /////////////////
+        //INIT INSTANCE
+        /////////////////
+        _init();
     };
     this.controller.$inject = ['$scope'];
 });

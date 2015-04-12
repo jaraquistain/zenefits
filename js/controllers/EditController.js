@@ -1,12 +1,27 @@
 Zenefits.add('Controller','EditController', function EditController(){
     this.controller = function($scope, $routeParams, $location){
-        Zenefits.Model.Note.getNote({
-            'id': $routeParams.id,
-            'success': function(note){
-                $scope.note = note;
-            }
-        });
+        /////////////////
+        //PRIVATE METHODS
+        /////////////////
+        /**
+         * Init the controller and fetch relevant data from data store
+         * @private
+         */
+        var _init = function() {
+            Zenefits.Model.Note.getNote({
+                'id': $routeParams.id,
+                'success': function(note){
+                    $scope.note = note;
+                }
+            });
+        };
 
+        /////////////////
+        //PUBLIC METHODS
+        /////////////////
+        /**
+         * Save the changes to the note. Checks for form validity before submitting.
+         */
         $scope.save = function save() {
             $scope.submitted = true;
 
@@ -18,6 +33,10 @@ Zenefits.add('Controller','EditController', function EditController(){
             });
         };
 
+        /**
+         * Delete a note
+         * @param id (String) The ID of the note to be deleted
+         */
         $scope.remove = function(id) {
             var confirm = window.confirm("Are you sure you want to delete this note?");
             confirm && Zenefits.Model.Note.removeNote({
@@ -28,9 +47,17 @@ Zenefits.add('Controller','EditController', function EditController(){
             })
         };
 
+        /**
+         * Cancel saving the note, return to view all notes
+         */
         $scope.cancel = function cancel() {
             $location.path('/note/' + $scope.note.id);
         };
+
+        /////////////////
+        //INIT INSTANCE
+        /////////////////
+        _init();
     };
     this.controller.$inject = ['$scope', '$routeParams', '$location'];
 });

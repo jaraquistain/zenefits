@@ -4,8 +4,9 @@
  * @constructor
  */
 function Zenefits(){
-
+    /////////////////
     //PUBLIC METHODS
+    /////////////////
     /**
      * Add an entity into our namespace.
      * @param type (String, required) the type of entity we are adding. Typical values are "Class", "Controller", "Directive", etc.
@@ -24,4 +25,5 @@ function Zenefits(){
     };
 }
 
+//Add instance of namespace to window for easy access
 window.Zenefits = new Zenefits;
