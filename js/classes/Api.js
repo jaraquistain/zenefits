@@ -2,7 +2,7 @@ Zenefits.add('Class', 'Api', function Api() {
     /////////////////
     //PRIVATE VARS
     /////////////////
-    var _db          = window.localStorage || new Zenefits.classes.DataStore,
+    var _db          = window.localStorage || new Zenefits.Class.DataStore,
         NOTE_KEY     = '_NOTES',
         currentNotes = _db.getItem(NOTE_KEY);
 
