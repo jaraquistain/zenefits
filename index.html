@@ -28,7 +28,7 @@
         <p ng-if="notes.length" class="zn-note-text">Select a note below to view it.</p>
         <ul ng-if="notes.length" class="zn-note-list">
             <li class="zn-note-list-item" ng-repeat="note in notes track by $index">
-                <a class="zn-note-list-link" data-ng-href="#/note/{{note.id}}">- {{note.data.title}}</a>
+                <a class="zn-note-list-link" data-ng-href="#/note/{{note.id}}" ng-bind="'- ' + note.data.title"></a>
                 <!--<span data-ng-click="remove(note.id, $index)">remove</span>-->
             </li>
         </ul>
@@ -41,8 +41,8 @@
         <a class="zn-btn-nav right" data-ng-href="#/note/{{note.id}}/edit">edit</a>
     </nav>
     <div class="zn-note zn-view">
-        <h1 class="zn-note-title">{{note.data.title}}</h1>
-        <pre class="zn-note-text">{{note.data.text}}</pre>
+        <h1 class="zn-note-title" ng-bind="note.data.title"></h1>
+        <pre class="zn-note-text" ng-bind="note.data.text"></pre>
     </div>
 </script>
 
@@ -68,7 +68,7 @@
 <script src="js/classes/Api.js"></script>
 
 <!--MODELS-->
-<script src="js/classes/Note.js"></script>
+<script src="js/models/Note.js"></script>
 
 <!--ANGULAR CONTROLLERS-->
 <script type="text/javascript" src="js/controllers/NotesController.js"></script>

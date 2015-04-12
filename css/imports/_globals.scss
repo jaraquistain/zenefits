@@ -22,3 +22,21 @@ $ZN-DARK-BLUE: #051838;
     white-space: nowrap;
     overflow: hidden;
 }
+
+@mixin placeholder
+{
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    /* Firefox 18- */
+    &::-moz-placeholder {
+        @content;
+    }
+    /* Firefox 19+ */
+    &:-ms-input-placeholder {
+        @content;
+    }
+}

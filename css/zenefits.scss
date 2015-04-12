@@ -24,6 +24,9 @@
         &.show-invalid {
             .ng-invalid {
                 border: 1px solid $ZN-RED;
+                @include placeholder {
+                    color: $ZN-RED;
+                }
             }
         }
     }

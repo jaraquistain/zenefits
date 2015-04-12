@@ -17,7 +17,17 @@
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch; }
   #zn-content .zn-form.show-invalid .ng-invalid {
-    border: 1px solid #FF2525; }
+    border: 1px solid #FF2525;
+    /* Firefox 18- */
+    /* Firefox 19+ */ }
+    #zn-content .zn-form.show-invalid .ng-invalid::-webkit-input-placeholder {
+      color: #FF2525; }
+    #zn-content .zn-form.show-invalid .ng-invalid:-moz-placeholder {
+      color: #FF2525; }
+    #zn-content .zn-form.show-invalid .ng-invalid::-moz-placeholder {
+      color: #FF2525; }
+    #zn-content .zn-form.show-invalid .ng-invalid:-ms-input-placeholder {
+      color: #FF2525; }
   #zn-content .zn-input, #zn-content .zn-textarea {
     padding: 6px;
     border-radius: 3px;
