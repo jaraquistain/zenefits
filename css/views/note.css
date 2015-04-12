@@ -1,0 +1,12 @@
+.zn-note .zn-note-title {
+  line-height: 32px;
+  margin: 12px 0;
+  color: #2D4571; }
+.zn-note .zn-note-text {
+  margin: 12px 0;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  white-space: pre-wrap;
+  color: #2D4571; }
+
+/*# sourceMappingURL=note.css.map */

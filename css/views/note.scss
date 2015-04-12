@@ -1,0 +1,16 @@
+@import '../imports/globals';
+
+.zn-note {
+    .zn-note-title {
+        line-height: 32px;
+        margin: $gutter 0;
+        color: $ZN-BLUE;
+    }
+    .zn-note-text {
+        margin: $gutter 0;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        white-space: pre-wrap;
+        color: $ZN-BLUE;
+    }
+}

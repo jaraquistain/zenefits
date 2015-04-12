@@ -1,0 +1,67 @@
+#zn-content {
+  font-family: 'Open Sans', sans-serif; }
+  #zn-content .zn-nav {
+    padding: 12px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 53px;
+    width: 100%;
+    border-bottom: solid 1px #2D4571;
+    background-color: #FFF; }
+  #zn-content .zn-view {
+    height: 100vh;
+    padding: 12px;
+    padding-top: 53px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; }
+  #zn-content .zn-form.show-invalid .ng-invalid {
+    border: 1px solid #FF2525; }
+  #zn-content .zn-input, #zn-content .zn-textarea {
+    padding: 6px;
+    border-radius: 3px;
+    width: 100%;
+    margin: 6px 0;
+    display: block;
+    border: 1px solid #CCC; }
+    #zn-content .zn-input:focus, #zn-content .zn-textarea:focus {
+      outline: none; }
+    #zn-content .zn-input.ng-valid, #zn-content .zn-textarea.ng-valid {
+      border: 1px solid #3C8D2F; }
+  #zn-content .zn-btn, #zn-content .zn-btn-nav, #zn-content .zn-btn-green {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 6px;
+    text-decoration: none;
+    background: none;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center; }
+    #zn-content .zn-btn.right, #zn-content .right.zn-btn-nav, #zn-content .right.zn-btn-green {
+      float: right; }
+    #zn-content .zn-btn.left, #zn-content .left.zn-btn-nav, #zn-content .left.zn-btn-green {
+      float: left; }
+    #zn-content .zn-btn:active, #zn-content .zn-btn-nav:active, #zn-content .zn-btn-green:active {
+      background: none; }
+  #zn-content .zn-btn-nav {
+    border: 1px solid #2D4571;
+    color: #2D4571;
+    text-transform: uppercase;
+    font-size: 12px; }
+    #zn-content .zn-btn-nav.red {
+      border: 1px solid #FF2525;
+      color: #FF2525; }
+    #zn-content .zn-btn-nav.green {
+      border: 1px solid #3C8D2F;
+      color: #3C8D2F; }
+  #zn-content .zn-btn-green {
+    color: #3C8D2F;
+    border: 1px solid #3C8D2F;
+    text-transform: uppercase;
+    font-size: 16px;
+    width: 100%; }
+
+/*# sourceMappingURL=zenefits.css.map */

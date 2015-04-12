@@ -1,0 +1,22 @@
+@import '../imports/globals';
+
+.zn-edit {
+    .zn-form {
+        position: relative;
+        height: 100%;
+        padding: 42px 0 46px;
+    }
+    .zn-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .zn-textarea {
+        height: 100%;
+    }
+    .zn-btn-green {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}

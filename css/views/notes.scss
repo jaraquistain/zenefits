@@ -1,0 +1,35 @@
+@import '../imports/globals';
+
+.zn-notes {
+    .zn-note-list {
+        margin: 0;
+        padding: 0;
+    }
+    .zn-note-list-item {
+        list-style: none;
+        &:last-child {
+            .zn-note-list-link {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .zn-note-text {
+        color: $ZN-BLACK;
+        margin: $gutter 0;
+    }
+
+    .zn-note-link {
+        color: $ZN-BLUE;
+    }
+
+    .zn-note-list-link {
+        display: block;
+        text-decoration: none;
+        padding: $gutter;
+        border-bottom: 1px solid $ZN-GRAY;
+        color: $ZN-BLUE;
+        font-size: 16px;
+        @include truncate-single-line();
+    }
+}

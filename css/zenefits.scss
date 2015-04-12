@@ -1,0 +1,92 @@
+@import 'imports/globals';
+#zn-content {
+    font-family: 'Open Sans', sans-serif;
+    .zn-nav {
+        padding: $gutter;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $navHeight;
+        width: 100%;
+        border-bottom: solid 1px $ZN-BLUE;
+        background-color: $ZN-WHITE;
+    }
+
+    .zn-view {
+        height: 100vh;
+        padding: $gutter;
+        padding-top: $navHeight;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    .zn-form {
+        &.show-invalid {
+            .ng-invalid {
+                border: 1px solid $ZN-RED;
+            }
+        }
+    }
+    .zn-input, .zn-textarea {
+        &:focus {
+            outline: none;
+        }
+        padding: $gutter/2;
+        border-radius: 3px;
+        width: 100%;
+        margin: $gutter/2 0;
+        display: block;
+        border: 1px solid $ZN-GRAY;
+        &.ng-valid {
+            border: 1px solid $ZN-GREEN;
+        }
+    }
+
+    .zn-btn {
+        &.right {
+            float: right;
+        }
+        &.left {
+            float: left;
+        }
+        &:active {
+            background: none;
+        }
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        padding: $gutter/2;
+        text-decoration: none;
+        background: none;
+        display: inline-block;
+        min-width: 80px;
+        text-align: center;
+    }
+
+
+    .zn-btn-nav {
+        @extend .zn-btn;
+        border: 1px solid $ZN-BLUE;
+        color: $ZN-BLUE;
+        text-transform: uppercase;
+        font-size: 12px;
+        &.red {
+            border: 1px solid $ZN-RED;
+            color: $ZN-RED;
+        }
+        &.green {
+            border: 1px solid $ZN-GREEN;
+            color: $ZN-GREEN;
+        }
+    }
+
+    .zn-btn-green {
+        @extend .zn-btn;
+        color: $ZN-GREEN;
+        border: 1px solid $ZN-GREEN;
+        text-transform: uppercase;
+        font-size: 16px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,24 @@
+$gutter: 12px;
+$navHeight: 53px;
+
+$ZN-WHITE: #FFF;
+$ZN-GRAY: #CCC;
+$ZN-BLACK: #333;
+
+$ZN-LIGHT-GREEN: rgba(174, 247, 162, 0.47);
+$ZN-GREEN: #3C8D2F;
+$ZN-DARK-GREEN: #0A4600;
+
+$ZN-RED: #FF2525;
+$ZN-LIGHT-RED: #ff857b;
+
+$ZN-LIGHT-BLUE: rgba(115, 135, 167, 0.73);
+$ZN-BLUE: #2D4571;
+$ZN-DARK-BLUE: #051838;
+
+
+@mixin truncate-single-line {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

@@ -1,0 +1,24 @@
+.zn-notes .zn-note-list {
+  margin: 0;
+  padding: 0; }
+.zn-notes .zn-note-list-item {
+  list-style: none; }
+  .zn-notes .zn-note-list-item:last-child .zn-note-list-link {
+    border-bottom: none; }
+.zn-notes .zn-note-text {
+  color: #333;
+  margin: 12px 0; }
+.zn-notes .zn-note-link {
+  color: #2D4571; }
+.zn-notes .zn-note-list-link {
+  display: block;
+  text-decoration: none;
+  padding: 12px;
+  border-bottom: 1px solid #CCC;
+  color: #2D4571;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/*# sourceMappingURL=notes.css.map */

@@ -1,0 +1,16 @@
+.zn-edit .zn-form {
+  position: relative;
+  height: 100%;
+  padding: 42px 0 46px; }
+.zn-edit .zn-input {
+  position: absolute;
+  top: 0;
+  left: 0; }
+.zn-edit .zn-textarea {
+  height: 100%; }
+.zn-edit .zn-btn-green {
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
+/*# sourceMappingURL=edit.css.map */

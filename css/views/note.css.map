@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGI,uBAAe;EACX,WAAW,EAAE,IAAI;EACjB,MAAM,EAAE,MAAS;EACjB,KAAK,ECSH,OAAO;ADPb,sBAAc;EACV,MAAM,EAAE,MAAS;EACjB,KAAK,EAAE,IAAI;EACX,WAAW,EAAE,uBAAuB;EACpC,WAAW,EAAE,QAAQ;EACrB,KAAK,ECEH,OAAO",
+"sources": ["note.scss","../imports/_globals.scss"],
+"names": [],
+"file": "note.css"
+}

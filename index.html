@@ -2,27 +2,81 @@
 <html data-ng-app="zenefits">
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-    <!--<link rel="stylesheet" src="">-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>NoteTaker</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/zenefits.css">
+    <link rel="stylesheet" href="css/views/edit.css">
+    <link rel="stylesheet" href="css/views/notes.css">
+    <link rel="stylesheet" href="css/views/note.css">
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
     <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-sanitize.min.js"></script>
 </head>
 <body>
-    <p data-ng-controller="NotesController">nothing here {{foo + '!'}}</p>
+<div id="zn-content" data-ng-view=""></div>
 
-    <!--NAMESPACE-->
-    <script type="text/javascript" src="js/Zenefits.js"></script>
 
-    <!--CLASSES-->
-    <script src="js/classes/DataStore.js"></script>
-    <script src="js/classes/Api.js"></script>
+<!--VIEWS-->
+<script type="text/ng-template" id="/zn-notes-template.html">
+    <nav class="zn-nav">
+        <a class="zn-btn-nav green right" data-ng-href="#/create">new</a>
+    </nav>
+    <div class="zn-notes zn-view">
+        <p ng-if="!notes.length" class="zn-note-text">You haven't writen any notes.<br>You should <a class="zn-note-link" data-ng-href="#/create">write one now</a>.</p>
+        <p ng-if="notes.length" class="zn-note-text">Select a note below to view it.</p>
+        <ul ng-if="notes.length" class="zn-note-list">
+            <li class="zn-note-list-item" ng-repeat="note in notes track by $index">
+                <a class="zn-note-list-link" data-ng-href="#/note/{{note.id}}">- {{note.data.title}}</a>
+                <!--<span data-ng-click="remove(note.id, $index)">remove</span>-->
+            </li>
+        </ul>
+    </div>
+</script>
 
-    <!--ANGULAR CONTROLLERS-->
-    <script type="text/javascript" src="js/controllers/NotesController.js"></script>
-    <script type="text/javascript" src="js/controllers/NoteController.js"></script>
-    <script type="text/javascript" src="js/controllers/EditController.js"></script>
+<script type="text/ng-template" id="/zn-note-template.html">
+    <nav class="zn-nav">
+        <a class="zn-btn-nav left" data-ng-href="#/">view all</a>
+        <a class="zn-btn-nav right" data-ng-href="#/note/{{note.id}}/edit">edit</a>
+    </nav>
+    <div class="zn-note zn-view">
+        <h1 class="zn-note-title">{{note.data.title}}</h1>
+        <pre class="zn-note-text">{{note.data.text}}</pre>
+    </div>
+</script>
 
-    <!--ANGULAR APP-->
-    <script type="text/javascript" src="js/Module.js"></script>
+<script type="text/ng-template" id="/zn-edit-template.html">
+    <nav class="zn-nav">
+        <button ng-if="remove" class="zn-btn-nav red left" data-ng-click="remove(note.id)">remove</button>
+        <button class="zn-btn-nav right" data-ng-click="cancel()">cancel</button>
+    </nav>
+    <div class="zn-edit zn-view">
+        <form class="zn-form" name="noteForm" ng-class="{'show-invalid': submitted}" novalidate="true">
+            <input class="zn-input" type="text" data-ng-model="note.data.title" placeholder="Give your note a title" required>
+            <textarea class="zn-textarea" data-ng-model="note.data.text" placeholder="What's on your mind?" required></textarea>
+            <button class="zn-btn-green" data-ng-click="save()">save</button>
+        </form>
+    </div>
+</script>
+
+<!--NAMESPACE-->
+<script type="text/javascript" src="js/Zenefits.js"></script>
+
+<!--CLASSES-->
+<script src="js/classes/DataStore.js"></script>
+<script src="js/classes/Api.js"></script>
+
+<!--MODELS-->
+<script src="js/classes/Note.js"></script>
+
+<!--ANGULAR CONTROLLERS-->
+<script type="text/javascript" src="js/controllers/NotesController.js"></script>
+<script type="text/javascript" src="js/controllers/NoteController.js"></script>
+<script type="text/javascript" src="js/controllers/EditController.js"></script>
+<script type="text/javascript" src="js/controllers/CreateController.js"></script>
+
+<!--ANGULAR APP-->
+<script type="text/javascript" src="js/Module.js"></script>
 </body>
 </html>

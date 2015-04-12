@@ -10,16 +10,16 @@ function Zenefits(){
      * Add an entity into our namespace.
      * @param type (String, required) the type of entity we are adding. Typical values are "Class", "Controller", "Directive", etc.
      * @param name (String, required) the name of the entity being added
-     * @param entity (Function or Object, required) the constructor function for each entity being added, or an instance of an angular entity
+     * @param constructor (Function, required) the constructor function for each entity being added
      * @returns {Zenefits}
      */
-    this.add = function(type, name, entity){
-        if (!type || !name || !entity) {
-            console.warn('cannot add entity to namespace. Invalid arguments');
+    this.add = function(type, name, constructor){
+        if (!type || !name || !constructor) {
+            console.error('cannot add ' + (type || 'entity') +  ': ' + (name || 'unknown') + ' into namespace. Invalid arguments');
             return this;
         }
         this[type] = this[type] || {};
-        this[type][name] = entity;
+        this[type][name] = type === 'Class' ? constructor : new constructor;
         return this;
     };
 }
