@@ -45,11 +45,15 @@ Zenefits.add('Class', 'Api', function Api() {
      * @returns {Api}
      */
     this.getAll = function (callback) {
-        var items = JSON.parse(_db.getItem(NOTE_KEY));
-        callback(items.map(function (item) {
-            delete item._index;
-            return item;
-        }));
+        var items = JSON.parse(_db.getItem(NOTE_KEY)),
+            notes = [],
+            me = this;
+        items.forEach(function(id){
+            me.get(id, function(item){
+                notes.push(item);
+            });
+        });
+        callback(notes);
         return this
     };
 
@@ -86,7 +90,7 @@ Zenefits.add('Class', 'Api', function Api() {
         note._index = notes.length;
         note.id = _generateID();
 
-        notes.push(note);
+        notes.push(note.id);
 
         _db.setItem(NOTE_KEY, JSON.stringify(notes));
         _db.setItem(note.id, JSON.stringify(note));
@@ -116,8 +120,6 @@ Zenefits.add('Class', 'Api', function Api() {
         var notes   = JSON.parse(_db.getItem(NOTE_KEY)),
             index   = old._index,
             newNote = angular.extend((extend ? old : {'_index': index, 'id': id}), note);
-
-        notes[index] = newNote;
 
         _db.setItem(id, JSON.stringify(newNote));
         _db.setItem(NOTE_KEY, JSON.stringify(notes));
@@ -150,7 +152,7 @@ Zenefits.add('Class', 'Api', function Api() {
             note;
 
         for (var i = index + 1; i < notes.length; i++) {
-            note = notes[i];
+            note = JSON.parse(_db.getItem(notes[i]));
             note._index -= 1;
             _db.setItem(note.id, JSON.stringify(note));
         }
